@@ -67,7 +67,7 @@ body{
     padding: 4px;
     border-radius: 8px;
 }
-.num-input ::placeholder{
+.num-input::placeholder{
     color: #EEEEEE;
 }
 .num-input:focus{
@@ -102,4 +102,15 @@ body{
 }
 .inv{
     display: none;
+}
+#operador{
+    background-color: #393E46;
+    color: #EEEEEE;
+    border: 2px solid #222831;
+    padding: 4px;
+    border-radius: 8px;
+}
+#operador:focus{
+    outline: none;
+    border: 2px solid #7971EA;
 }

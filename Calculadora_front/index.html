@@ -15,6 +15,12 @@
             <div class="input-container">
                 <input type="number" id="num1" class="num-input" placeholder="Numero 1">
                 <input type="number" id="num2" class="num-input" placeholder="Numero 2">
+                <select id="operador" class="select">
+                    <option value="sum">Sumar</option>
+                    <option value="rest">Restar</option>
+                    <option value="mult">Multiplicar</option>
+                    <option value="div">Dividir</option>
+                </select>
                 <button onclick="sumar()" id="calcular">Enviar</button>
             </div>
             <div class="res-container">
@@ -27,11 +33,12 @@
         async function sumar() {
             const num1 = document.getElementById("num1").value;
             const num2 = document.getElementById("num2").value;
+            const operador = document.getElementById("operador").value;
             const res = document.querySelector(".res-input");
 
             try {
                 // Realizar la solicitud y esperar la respuesta
-                const response = await fetch(`http://localhost:3000/sum?num1=${num1}&num2=${num2}`);
+                const response = await fetch(`http://localhost:3000/${operador}?num1=${num1}&num2=${num2}`);
                 
                 // Verificar si la respuesta es exitosa
                 if (!response.ok) {
@@ -40,7 +47,6 @@
 
                 // Parsear la respuesta como JSON
                 const data = await response.json();
-                console.log(data);
 
                 // Mostrar el resultado en la página
                 res.innerHTML = data.result;
