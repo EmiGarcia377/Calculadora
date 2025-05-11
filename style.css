@@ -21,6 +21,7 @@ body{
     gap: 40px;
     background-color: #393E46;
     border-radius: 20px;
+    border-bottom: 10px solid #222831;
 }
 .title-container{
     display: flex;
@@ -97,6 +98,7 @@ body{
     padding: 4px;
     border-radius: 8px;
     width: 100%;
+    text-align: center;
 }
 .inv{
     display: none;
